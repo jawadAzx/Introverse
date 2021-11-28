@@ -47,15 +47,3 @@ def insert_user_password(user):
     cur.execute(sql, (user))
     conn.commit()
     return cur.lastrowid
-
-def insert_verses_verse(verse):
-    print("Verse", verse)
-    conn = sqlite3.connect('./db.sqlite3')
-    sql = ''' INSERT INTO verses(username,id,verse)
-              VALUES(?,?,?) '''
-    cur = conn.cursor()
-    print(verse,"end")
-
-    cur.execute(sql, (verse))
-    conn.commit()
-    return cur.lastrowid

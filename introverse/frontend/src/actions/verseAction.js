@@ -1,12 +1,28 @@
 import axios from "axios"
 
-export const postTweet = (verse) => {
+export const postVerse = (verse) => {
     console.log("Post Tweet",verse)
     return (dispatch) => {
         axios.post("verses", verse)
             .then(response => {
                 dispatch({
-                    type: "POSTVERSE",
+                    type: "ADD_VERSE",
+                    payload: response
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+
+export const getVerse = (verse) => {
+    console.log("Post Tweet",verse)
+    return (dispatch) => {
+        axios.get("verses", verse)
+            .then(response => {
+                dispatch({
+                    type: "GET_VERSE",
                     payload: response
                 })
             })
