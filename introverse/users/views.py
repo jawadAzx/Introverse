@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .query import getUserData
-from .query import insert_users, insert_user_password
+from .query import insert_users, insert_user_password, insert_verses_verse
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -42,4 +42,28 @@ def users(request):
         passwordfunc.append(temp[-1])
         insert_users(userfunc)
         insert_user_password(passwordfunc)
+        return render(request, 'users.html')
+
+def tweets(request):
+    if request.method == 'GET':
+        data = request
+        username = data.GET.get('username')
+        user = None
+        try:
+            verse = getUserData(username)
+            user = {
+                'username': users[0],
+                'id': users[1],
+                'verse': users[2],
+            }
+        except:
+            print("Incorrect username/password")
+            user = "Incorrect username/id"
+        print("BRUh", user)
+
+        return render(request, 'users.html', {'users': json.dumps(user)})
+    elif request.method == 'POST':
+        data = request.body.decode('utf-8')
+        print(data)
+        
         return render(request, 'users.html')

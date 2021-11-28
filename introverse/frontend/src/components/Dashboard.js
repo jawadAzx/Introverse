@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Verses from './Verses/Verses';
+import AddVerse from './Verses/AddVerse';
 
 const Dashboard = () => {
     const api = "https://meme-api.herokuapp.com/gimme"
@@ -15,6 +17,7 @@ const Dashboard = () => {
 
     return (
         <div>
+        
             {
                 viewingMeme ? <img src={meme.url} />
                     : <div>
@@ -23,10 +26,12 @@ const Dashboard = () => {
                     </div>
             }
             <button className="btn btn-primary btn-sm" onClick={getMeme}>Magic</button>
+        <Verses/>
+        <AddVerse />
 
 
         </div>
-    )
+        )
 }
 
 export default Dashboard
