@@ -1,9 +1,10 @@
 import axios from "axios"
 
-export const postVerse = (verse) => {
-    console.log("Post Tweet",verse)
+export const postVerse = (data) => {
+    console.log("Post Tweet", data)
+
     return (dispatch) => {
-        axios.post("verses", verse)
+        axios.post('verses', data)
             .then(response => {
                 dispatch({
                     type: "ADD_VERSE",
@@ -16,10 +17,12 @@ export const postVerse = (verse) => {
     }
 }
 
-export const getVerse = (verse) => {
-    console.log("Post Tweet",verse)
+export const getVerse = (name) => {
+    console.log("in get",name)
+    const getRequest = "verses?username=" + name 
+
     return (dispatch) => {
-        axios.get("verses", verse)
+        axios.get(getRequest)
             .then(response => {
                 dispatch({
                     type: "GET_VERSE",

@@ -37,7 +37,7 @@ sql_create_passwords_table = """ CREATE TABLE IF NOT EXISTS passwords(
     FOREIGN KEY (username) REFERENCES users(username)
     ); """
 
-sql_create_verses_table = """ CREATE TABLE IF NOT EXISTS passwords(
+sql_create_verses_table = """ CREATE TABLE IF NOT EXISTS verses(
     username text not null,
     id integer not null UNIQUE ,
     verse text not null,

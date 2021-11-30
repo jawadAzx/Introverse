@@ -1,14 +1,24 @@
 import sqlite3
 
-def insert_verse(verse):
-    print("Verse", verse)
+def insert_verse(verse,username):
     conn = sqlite3.connect('./db.sqlite3')
+    cur = conn.cursor()
+    id = 0
+    try:
+        cur.execute('SELECT id FROM verses WHERE username = ?;', [username])
+        id = cur.fetchall()
+        if id == None:
+            id = 0
+        else:
+            id = id[-1][0] + 1
+    except:
+        print("Error")
+   
     sql = ''' INSERT INTO verses(username,id,verse)
               VALUES(?,?,?) '''
-    cur = conn.cursor()
-    print(verse,"end")
-
-    cur.execute(sql, (verse))
+   
+    data = (username,id,verse)
+    cur.execute(sql, (data))
     conn.commit()
     return cur.lastrowid
 
@@ -17,8 +27,6 @@ def get_verse(user):
     conn = sqlite3.connect('./db.sqlite3')
     cur = conn.cursor()
     cur.execute('SELECT verse FROM verses WHERE username = ?;', [user])
-    temp = cur.fetchone()
+    temp = cur.fetchall()
     print(temp,"end")
-
     return temp
-
