@@ -41,6 +41,8 @@ sql_create_verses_table = """ CREATE TABLE IF NOT EXISTS verses(
     username text not null,
     id integer not null UNIQUE ,
     verse text not null,
+    numofcomments integer,
+    numoflikes integer,
     FOREIGN KEY (username) REFERENCES users(username)
     ); """
 

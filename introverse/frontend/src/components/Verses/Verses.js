@@ -7,24 +7,23 @@ const Verses = () => {
     const dispatch = useDispatch()
     const userData = useSelector((state) => state.signinreducers.user)
     const [justEntered, setJustEntered] = useState(false)
+
     if (justEntered === false) {
         dispatch(getVerse(userData.username))
+        setJustEntered(true)
     }
-    const [verse, setVerse] = useState("")
-
-
-    // let user = useSelector((state) => state.signinreducers.user)
-    // dispatch(getVerse(user))
-    // let verses = useSelector((state) => state.verseReducers.verse)
+    const datum = useSelector((state) => state.verseReducers.verse.verse)
 
     return (
-        // data.map(data => (
 
-        // <Verse/>
-
-        // ))
         <div>
+            {datum !== undefined ?
+                <div> {datum.map(item => (
+                    <Verse key={item.id} verse={item} />
+                ))} </div> :
+                <div> Loading... </div>}
         </div>
+
 
     )
 }

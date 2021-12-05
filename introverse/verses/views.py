@@ -9,21 +9,29 @@ from .query import get_verse
 def verses(request):
     if request.method == 'GET':
         data = request
+        # print(data)
         username = data.GET.get('username')
-        print(username)
+        # print(username)
         verses = None
-        verse_list = []
+        verse_dict = {}
+        verses_list = []
+        id_list = []
         try:
             verses = get_verse(username)
         except:
             print("ERROR RETRIEVING VERSES")
+        # print(verses[0][0], "LOOK HERE")
         for verse in verses:
-            verse_list.append(verse[0])
-        print(verse_list)
-        to_ret = {
-        'verses': verse_list,
-        }
-        return render(request, 'verses.html', {'verses': json.dumps(to_ret)})
+            verses_list.append(verse[0])
+            id_list.append(verse[1])
+        verse_dict["verse"] = verses_list
+        verse_dict["id"] = id_list
+        # print(verse_dict)
+        # to_ret = {
+        # 'verses': verse_dict,
+        # }
+        print(verse_dict)
+        return render(request, 'verses.html', {'verses': json.dumps(verse_dict)})
 
     elif request.method == 'POST':
         data = request.body.decode('utf-8')

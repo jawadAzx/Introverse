@@ -8,7 +8,7 @@ export const postVerse = (data) => {
             .then(response => {
                 dispatch({
                     type: "ADD_VERSE",
-                    payload: response
+                    payload: data
                 })
             })
             .catch(err => {
@@ -34,6 +34,23 @@ export const getVerse = (name) => {
             })
     }
 }
+
+// export const likeVerse = (name) => {
+//     const getRequest = "verses?username=" + name 
+
+//     return (dispatch) => {
+//         axios.get(getRequest)
+//             .then(response => {
+//                 dispatch({
+//                     type: "GET_VERSE",
+//                     payload: response
+//                 })
+//             })
+//             .catch(err => {
+//                 console.log(err)
+//             })
+//     }
+// }
 
 // export const getTweet = (user) => {
 //     console.log("Get Tweet" , verse)
