@@ -38,6 +38,8 @@
 
 /*! export Element [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-redux/node_modules/react-is/cjs/react-is.production.min.js .Element */
 
+/*! export FontAwesomeIcon [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export ForwardRef [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export ForwardRef [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .ForwardRef */
@@ -172,9 +174,13 @@
 
 /*! export composeWithDevTools [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export config [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export connect [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-redux/es/connect/connect.js .default */
 
 /*! export connectAdvanced [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-redux/es/components/connectAdvanced.js .default */
+
+/*! export counter [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export createBrowserHistory [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -230,13 +236,19 @@
 
 /*! export devToolsEnhancer [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export dom [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export findDOMNode [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export findDOMNode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .findDOMNode */
 
+/*! export findIconDefinition [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export flushSync [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export flushSync [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .flushSync */
+
+/*! export follow [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export forwardRef [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -255,6 +267,8 @@
 /*! export hydrate [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export hydrate [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .hydrate */
+
+/*! export icon [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export impureFinalPropsSelectorFactory [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -346,9 +360,13 @@
 
 /*! export isValidElementType [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-redux/node_modules/react-is/cjs/react-is.production.min.js .isValidElementType */
 
+/*! export layer [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export lazy [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export lazy [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .lazy */
+
+/*! export library [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export locationsAreEqual [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -360,6 +378,10 @@
 
 /*! export memo [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .memo */
 
+/*! export noAuto [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export parse [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export parsePath [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export postVerse [provided] [no usage info] [missing usage info prevents renaming] */
@@ -370,6 +392,8 @@
 
 /*! export render [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .render */
 
+/*! export search [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export setBatch [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export shallowEqual [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-redux/es/utils/shallowEqual.js .default */
@@ -379,6 +403,10 @@
 /*! export signinFailed [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export signup [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export text [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export toHtml [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export typeOf [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -392,15 +420,27 @@
 
 /*! export unstable_IdlePriority [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_IdlePriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_IdlePriority */
+
 /*! export unstable_ImmediatePriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_ImmediatePriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_ImmediatePriority */
 
 /*! export unstable_LowPriority [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_LowPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_LowPriority */
+
 /*! export unstable_NormalPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_NormalPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_NormalPriority */
 
 /*! export unstable_Profiling [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_Profiling [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_Profiling */
+
 /*! export unstable_UserBlockingPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_UserBlockingPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_UserBlockingPriority */
 
 /*! export unstable_batchedUpdates [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -410,7 +450,11 @@
 
 /*! export unstable_cancelCallback [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_cancelCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_cancelCallback */
+
 /*! export unstable_continueExecution [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_continueExecution [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_continueExecution */
 
 /*! export unstable_createPortal [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -418,15 +462,27 @@
 
 /*! export unstable_forceFrameRate [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_forceFrameRate [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_forceFrameRate */
+
 /*! export unstable_getCurrentPriorityLevel [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_getCurrentPriorityLevel [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_getCurrentPriorityLevel */
 
 /*! export unstable_getFirstCallbackNode [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_getFirstCallbackNode [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_getFirstCallbackNode */
+
 /*! export unstable_next [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_next [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_next */
 
 /*! export unstable_now [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_now [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_now */
+
 /*! export unstable_pauseExecution [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_pauseExecution [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_pauseExecution */
 
 /*! export unstable_renderSubtreeIntoContainer [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -434,13 +490,23 @@
 
 /*! export unstable_requestPaint [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_requestPaint [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_requestPaint */
+
 /*! export unstable_runWithPriority [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_runWithPriority [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_runWithPriority */
 
 /*! export unstable_scheduleCallback [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_scheduleCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_scheduleCallback */
+
 /*! export unstable_shouldYield [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export unstable_shouldYield [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_shouldYield */
+
 /*! export unstable_wrapCallback [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export unstable_wrapCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_wrapCallback */
 
 /*! export useCallback [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -582,6 +648,8 @@
 
 /*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.g, __webpack_require__.d, __webpack_require__.* */
+
 /*! runtime requirements: module */
 
 /*! runtime requirements: module, __webpack_require__ */
@@ -629,6 +697,10 @@
   \*************************************/
 
 /*!**************************************!*\
+  !*** ./src/actions/searchactions.js ***!
+  \**************************************/
+
+/*!**************************************!*\
   !*** ./src/actions/signinactions.js ***!
   \**************************************/
 
@@ -658,6 +730,10 @@
 
 /*!****************************************!*\
   !*** ./src/components/Verses/Verse.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/reducers/searchreducers.js ***!
   \****************************************/
 
 /*!****************************************!*\
@@ -712,6 +788,10 @@
   !*** ./node_modules/object-assign/index.js ***!
   \*********************************************/
 
+/*!*********************************************!*\
+  !*** ./src/components/searchs/Searchbar.js ***!
+  \*********************************************/
+
 /*!**********************************************!*\
   !*** ./node_modules/axios/lib/core/Axios.js ***!
   \**********************************************/
@@ -746,6 +826,10 @@
 
 /*!*************************************************!*\
   !*** ./node_modules/axios/lib/cancel/Cancel.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/searchs/SearchResults.js ***!
   \*************************************************/
 
 /*!**************************************************!*\
@@ -945,6 +1029,10 @@
   \****************************************************************/
 
 /*!*****************************************************************!*\
+  !*** ./node_modules/@fortawesome/react-fontawesome/index.es.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
   !*** ./node_modules/react-redux/es/utils/bindActionCreators.js ***!
   \*****************************************************************/
 
@@ -987,6 +1075,10 @@
 /*!*******************************************************************!*\
   !*** ./node_modules/react-redux/es/connect/verifySubselectors.js ***!
   \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ./node_modules/@fortawesome/fontawesome-svg-core/index.es.js ***!
+  \********************************************************************/
 
 /*!************************************************************************!*\
   !*** ./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js ***!

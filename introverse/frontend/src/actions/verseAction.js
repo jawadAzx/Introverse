@@ -18,7 +18,7 @@ export const postVerse = (data) => {
 }
 
 export const getVerse = (name) => {
-    console.log("in get",name)
+    // console.log("in get",name)
     const getRequest = "verses?username=" + name 
 
     return (dispatch) => {

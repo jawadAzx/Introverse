@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Dashboard from "./Dashboard"
 import store from "../store"
 import { Provider } from "react-redux";
+import SearchResults from './searchs/SearchResults';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/" component={LoginPage} />
           <Route exact path="/signup" component={SignupPage} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/searchresults" component={SearchResults} />
         </Switch>
       </Router>
     </Provider>

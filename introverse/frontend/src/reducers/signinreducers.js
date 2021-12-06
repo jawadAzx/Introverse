@@ -12,6 +12,7 @@ const signinreducers = (state = initialData, action) => {
             return {
                 ...state,
                 user: finalData,
+                allowed: true,
             }
         case 'INCORRECT_CREDENTIALS':
             return {
