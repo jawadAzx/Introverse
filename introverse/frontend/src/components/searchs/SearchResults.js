@@ -12,7 +12,9 @@ const SearchResults = () => {
         dispatch(follow(query))
         console.log(query)
     }
-    dispatch(search(searchResults.username))
+    const searchResult = useSelector(state => state.searchReducers.follow_success)
+    // console.log(searchResult)
+    // dispatch(search(searchResults.username))
     return (
         <div>
             <Navbar />
@@ -28,6 +30,9 @@ const SearchResults = () => {
                                         </div>
                                         <div className="pl-5 col-0">
                                             <button className="btn btn-primary" onClick={buttonClicked}>Follow</button>
+                                            {
+                                                searchResult ? <div className="alert alert-danger" role="alert">You are already following!</div> : null
+                                            }
                                         </div>
                                     </div>
                                 </div>

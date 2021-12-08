@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const search = (query) => {
-    // console.log("searching for: " + query);
     return (dispatch) => {
         axios
             .get(`/users?query=${query}`)
@@ -25,11 +24,11 @@ export const follow = (query) => {
     query = query.split(" ");
     return (dispatch) => {
         axios
-            .get(`/users?follow=${query[0]}&follower=${query[1]}`)
+            .get(`/followers?follow=${query[0]}&follower=${query[1]}`)
             .then((res) => {
-                // console.log("HHOHIOHI")
+                console.log("HHOHIOHI", res);
                 dispatch({
-                    type: "Followed",
+                    type: "FOLLOWED",
                     payload: res.data,
                 });
             })

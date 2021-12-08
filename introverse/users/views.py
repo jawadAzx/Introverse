@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .query import getUserData
-from .query import insert_users, insert_user_password, updateFollowers
+from .query import insert_users, insert_user_password
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -11,10 +11,9 @@ def users(request):
     if request.method == 'GET':
         data = request
         query = data.GET.get('query')
-        follow = data.GET.get('follow')
-        follower = data.GET.get('follower')
+
         # print(query, follow, follower, "LOOK HERE")
-        if query == None and follow == None and follower == None:
+        if query == None:
             username = data.GET.get('username')
             # print("BRUG",data.GET.get('username'))
             user = None
@@ -36,7 +35,7 @@ def users(request):
             # print("BRUh", user)
 
             return render(request, 'users.html', {'users': json.dumps(user)})
-        elif query != None and follow == None and follower == None:
+        elif query != None:
             # print("IAM GOING TO RETURN QUERY")
             # print("BRUG",data.GET.get('username'))
             user = None
@@ -56,13 +55,7 @@ def users(request):
                 user = "User Does not exist"
             # print("BRUh", user)
             return render(request, 'users.html', {'users': json.dumps(user)})
-        elif query == None and follow != None and follower != None:
-            print(follow, follower, "CHECK ME ")
-            updateFollowers(follow, follower)
-            user = {
-                    'username': "users",    
-                }
-            return render(request, 'users.html', {'users': json.dumps(user)})
+
 
 
     elif request.method == 'POST':

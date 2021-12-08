@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'frontend.apps.FrontendConfig',
     'users',
     'verses',
+    'followers',
 ]
 
 MIDDLEWARE = [
