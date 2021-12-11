@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'frontend.apps.FrontendConfig',
     'users',
+    'verses',
+    'followers',
 ]
 
 MIDDLEWARE = [

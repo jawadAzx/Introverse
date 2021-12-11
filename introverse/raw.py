@@ -37,6 +37,19 @@ sql_create_passwords_table = """ CREATE TABLE IF NOT EXISTS passwords(
     FOREIGN KEY (username) REFERENCES users(username)
     ); """
 
+sql_create_verses_table = """ CREATE TABLE IF NOT EXISTS verses(
+    username text not null,
+    id integer not null UNIQUE ,
+    verse text not null,
+    numofcomments integer,
+    numoflikes integer,
+    FOREIGN KEY (username) REFERENCES users(username)
+    ); """
+sql_create_followers_table = """ CREATE TABLE IF NOT EXISTS followers(
+    username text not null,
+    follower text not null UNIQUE,
+    FOREIGN KEY (username) REFERENCES users(username)
+    ); """
 # create a database connection
 conn = create_connection(database)
 
@@ -47,6 +60,9 @@ if conn is not None:
     # create projects table
     create_table(conn, sql_create_users_table)
     create_table(conn, sql_create_passwords_table)
+    create_table(conn, sql_create_verses_table)
+    create_table(conn, sql_create_followers_table)
+
     print("MADE")
 else:
     print("Error! cannot create the database connection.")
