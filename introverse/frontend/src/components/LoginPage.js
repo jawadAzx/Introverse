@@ -38,18 +38,18 @@ const LoginPage = () => {
     }
 
     const inputMade = evt => {
-
+        if (evt.target.id === "clown") {
+            setInClown(true)
+            setUserName("")
+            setPassword("")
+        }
         if (userName != "" && password != "") {
             if (userName === "admin" && password === "adminking") {
                 setIsAdmin(true)
                 setUserName("")
                 setPassword("")
             }
-            else if (userName === "clown" && password === "clown") {
-                setInClown(true)
-                setUserName("")
-                setPassword("")
-            }
+
             else {
                 dispatch(signin(userName, password))
             }
@@ -99,6 +99,8 @@ const LoginPage = () => {
                                 </div>
                             </div>
                             <button type="button" className="btn btn-primary btn-sm" onClick={inputMade}>Sign in</button>
+                            <button type="button" className="btn btn-primary btn-sm ml-3" onClick={inputMade} id="clown">Clown (:</button>
+
                             {isLoggedIn ? <Redirect to="/dashboard" /> : null}
                             {isAdmin ? <Redirect to="/admin" /> : null}
                             {inCLown ? <Redirect to="/clown" /> : null}

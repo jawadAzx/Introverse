@@ -23,7 +23,7 @@ const Clown = () => {
                         {
                             viewingMeme ? <img src={meme.url} />
                                 : <div>
-                                    <img src={"https://blondzombie.files.wordpress.com/2016/01/monkey-computer.jpg?w=680"} width="193" height="130" />
+                                    <img src={"https://blondzombie.files.wordpress.com/2016/01/monkey-computer.jpg?w=720"} width="193" height="130" />
                                 </div>
                         }
                         <button className="btn btn-primary btn-sm" onClick={getMeme}>Magic</button>
