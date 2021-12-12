@@ -1,4 +1,5 @@
 import axios from "axios"
+import Verses from "../components/Verses/Verses"
 
 export const postVerse = (data) => {
     console.log("Post Tweet", data)
@@ -35,22 +36,20 @@ export const getVerse = (name) => {
     }
 }
 
-// export const likeVerse = (name) => {
-//     const getRequest = "verses?username=" + name 
-
-//     return (dispatch) => {
-//         axios.get(getRequest)
-//             .then(response => {
-//                 dispatch({
-//                     type: "GET_VERSE",
-//                     payload: response
-//                 })
-//             })
-//             .catch(err => {
-//                 console.log(err)
-//             })
-//     }
-// }
+export const likeVerse = (id) => {
+    return (dispatch) => {
+        axios.post('verses', [id, "put",])
+            .then(response => {
+                dispatch({
+                    type: "ADD_VERSE",
+                    payload: id
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
 
 // export const getTweet = (user) => {
 //     console.log("Get Tweet" , verse)

@@ -368,6 +368,8 @@
 
 /*! export library [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export likeVerse [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export locationsAreEqual [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export matchPath [provided] [no usage info] [missing usage info prevents renaming] */
