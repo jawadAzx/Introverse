@@ -1,5 +1,6 @@
 const initialData = {
   verse: [],
+
 }
 
 const verseReducers = (state = initialData, action) => {
