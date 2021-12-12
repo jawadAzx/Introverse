@@ -14,6 +14,7 @@ const LoginPage = () => {
     const [incorrectCreditials, setIncorrectCreditials] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
     const [blocked, setBlocked] = useState(false)
+    const [inCLown, setInClown] = useState(false)
     const validateData = () => {
         let userData = useSelector((state) => state.signinreducers)
         if (userData.user.username === userName && userData.user.password === password) {
@@ -41,6 +42,11 @@ const LoginPage = () => {
         if (userName != "" && password != "") {
             if (userName === "admin" && password === "adminking") {
                 setIsAdmin(true)
+                setUserName("")
+                setPassword("")
+            }
+            else if (userName === "clown" && password === "clown") {
+                setInClown(true)
                 setUserName("")
                 setPassword("")
             }
@@ -95,11 +101,13 @@ const LoginPage = () => {
                             <button type="button" className="btn btn-primary btn-sm" onClick={inputMade}>Sign in</button>
                             {isLoggedIn ? <Redirect to="/dashboard" /> : null}
                             {isAdmin ? <Redirect to="/admin" /> : null}
+                            {inCLown ? <Redirect to="/clown" /> : null}
                             <div className="row pt-2">
                                 <div className="col-lg-10">
                                     {incorrectCreditials ? <div className="alert alert-danger" role="alert">
                                         Incorrect username/password
                                     </div> : null}
+
                                     {blocked ? <div className="alert alert-danger" role="alert">
                                         Your account has been blocked
                                     </div> : null}
