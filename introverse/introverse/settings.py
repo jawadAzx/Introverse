@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users',
     'verses',
     'followers',
+    'adminaccess',
 ]
 
 MIDDLEWARE = [
