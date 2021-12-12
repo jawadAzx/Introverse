@@ -5,7 +5,7 @@ def insert_verse(verse,username):
     cur = conn.cursor()
     id = 0
     try:
-        cur.execute('SELECT id FROM verses WHERE username = ?;', [username])
+        cur.execute('SELECT id FROM verses;')
         id = cur.fetchall()
         if id == None or len(id) == 0:
             id = 0
@@ -31,3 +31,22 @@ def get_verse(user):
     temp = cur.fetchall()
     print(temp,"end")
     return temp
+
+def add_like(id):
+    conn = sqlite3.connect('./db.sqlite3')
+    cur = conn.cursor()
+    id = 0
+    likes = 0
+    cur.execute('SELECT numoflikes FROM verses WHERE id = ?;' ,[id])
+    likes = cur.fetchall()
+    likes = likes[0][0]
+    if likes == None or likes == 0:
+        likes = 1
+    else:
+        likes = likes + 1
+
+    cur.execute('UPDATE verses SET numoflikes = ? WHERE id = ?', (likes,id))
+    conn.commit()
+    return cur.lastrowid
+
+

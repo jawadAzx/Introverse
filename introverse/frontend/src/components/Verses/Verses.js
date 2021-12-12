@@ -15,7 +15,6 @@ const Verses = () => {
     const datum = useSelector((state) => state.verseReducers.verse.verse)
 
     return (
-
         <div>
             {datum !== undefined ?
                 <div> {datum.map(item => (

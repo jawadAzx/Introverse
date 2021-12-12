@@ -23,6 +23,11 @@ const verseReducers = (state = initialData, action) => {
         ...state,
         verse: state.verse.filter((verse) => verse.id !== data),
       };
+
+    case "ADD_LIKE":
+      return{
+        ...state, 
+      }
     default:
       return state;
   }

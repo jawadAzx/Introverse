@@ -3,6 +3,8 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from .query import insert_verse
 from .query import get_verse
+from .query import add_like
+import urllib.parse
 
 @csrf_exempt
 # Create your views here.
@@ -35,13 +37,28 @@ def verses(request):
 
     elif request.method == 'POST':
         data = request.body.decode('utf-8')
-        temp = data[1:-1]
-        temp = temp.replace('"', '')
-        temp = tuple(temp.split(','))
-        data_to_add = temp[0]
-        username = temp[1]
-        # print(data_to_add)
-        insert_verse(data_to_add, username)
+        print("Post ka data", data)
+        cond = data[-5:-2]
+        print("cond", cond)
+        if (cond == "put"):
+            #For put request
+            id = data[1:-7]
+            add_like(int(id))
+
+        else:
+            temp = data[1:-1]
+            temp = temp.replace('"', '')
+            temp = tuple(temp.split(','))
+            data_to_add = temp[0]
+            username = temp[1]
+            # print(data_to_add)
+            insert_verse(data_to_add, username)
         
         return render(request, 'verses.html')
+
+    # elif request.method == 'PUT':
+    #     data = request
+    #     readbytes = data['wsgi.input'].read() # returns bytes object
+    #     readstr = readbytes.decode('utf-8')
+    #     print("Verses wala data ", readstr)
 
