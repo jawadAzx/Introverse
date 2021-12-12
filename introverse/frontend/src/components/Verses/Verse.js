@@ -4,15 +4,17 @@ import Verses from './Verses'
 import { useSelector } from 'react-redux'
 import { likeVerse } from '../../actions/verseAction'
 import { useDispatch } from 'react-redux'
+import { getVerse } from '../../actions/verseAction'
 
-const Verse = ({ verse, id, likes }) => {
-
+const Verse = ({ verse, id, likes, user }) => {
+    const dispatch = useDispatch()
     const [print, setPrint] = useState("")
     const [show, setShow] = useState(false)
     const [anotherBool, setAnotherBool] = useState(false)
     const userData = useSelector((state) => state.signinreducers.user)
     const [likeisClick, setLikeisClick] = useState(false);
     const [commentisClick, setCommentisClick] = useState(false);
+
     const likeClicked = (e) => {
         e.preventDefault();
         setLikeisClick(true);
@@ -23,11 +25,10 @@ const Verse = ({ verse, id, likes }) => {
         setAnotherBool(true)
     }
 
-    if(likeisClick === true)
-    {
-        const dispatch = useDispatch()
+    if (likeisClick === true) {
         dispatch(likeVerse(id))
-        // setLikeisClick(false)
+        dispatch(getVerse(user))
+        setLikeisClick(false)
     }
     return (
         <div>

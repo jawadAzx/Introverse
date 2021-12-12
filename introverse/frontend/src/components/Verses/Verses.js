@@ -21,7 +21,7 @@ const Verses = () => {
         <div>
             {datum !== undefined ?
                 <div> {datum.map((item, index) => (
-                    <Verse key={item.id} verse={item} id={ids[index]} likes = {likes[index]}/>
+                    <Verse key={item.id} verse={item} id={ids[index]} likes = {likes[index]} user={userData.username}/>
                 ))} </div> :
                 <div> Loading... </div>}
         </div>

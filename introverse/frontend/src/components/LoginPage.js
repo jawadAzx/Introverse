@@ -28,8 +28,7 @@ const LoginPage = () => {
             setPassword("")
 
         }
-        else if (userData === "Incorrect username/password") {
-
+        else if (userData.user === "Incorrect username/password") {
             dispatch(signinFailed())
             setUserName("")
             setPassword("")
@@ -40,9 +39,7 @@ const LoginPage = () => {
     const inputMade = evt => {
 
         if (userName != "" && password != "") {
-            console.log(userName, password)
             if (userName === "admin" && password === "adminking") {
-                console.log("UWU")
                 setIsAdmin(true)
                 setUserName("")
                 setPassword("")

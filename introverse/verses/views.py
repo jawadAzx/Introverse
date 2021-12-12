@@ -25,7 +25,7 @@ def verses(request):
             return render(request, 'verses.html', {'data': data})
         else:
             username = data.GET.get('username')
-            verses = None
+            verses = get_verse(username)
             verse_dict = {}
             verses_list = []
             id_list = []
