@@ -164,6 +164,8 @@
 
 /*! export bindActionCreators [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export block [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export cloneElement [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export cloneElement [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .cloneElement */
@@ -234,6 +236,8 @@
 
 /*! export defaultMergeProps [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export deleteVerse [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export devToolsEnhancer [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export dom [provided] [no usage info] [missing usage info prevents renaming] */
@@ -259,6 +263,8 @@
 /*! export generatePath [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .generatePath */
 
 /*! export getBatch [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getData [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getDependsOnOwnProps [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -415,6 +421,8 @@
 /*! export typeOf [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-is/cjs/react-is.production.min.js .typeOf */
 
 /*! export typeOf [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-redux/node_modules/react-is/cjs/react-is.production.min.js .typeOf */
+
+/*! export unblock [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export unmountComponentAtNode [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -691,6 +699,10 @@
   \*************************************/
 
 /*!*************************************!*\
+  !*** ./src/actions/blockactions.js ***!
+  \*************************************/
+
+/*!*************************************!*\
   !*** ./src/components/Dashboard.js ***!
   \*************************************/
 
@@ -708,6 +720,10 @@
 
 /*!**************************************!*\
   !*** ./src/actions/signupactions.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/actions/tablesactions.js ***!
   \**************************************/
 
 /*!**************************************!*\
@@ -746,6 +762,10 @@
   !*** ./src/reducers/signupreducers.js ***!
   \****************************************/
 
+/*!****************************************!*\
+  !*** ./src/reducers/tablesreducers.js ***!
+  \****************************************/
+
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/axios.js ***!
   \*****************************************/
@@ -774,12 +794,28 @@
   !*** ./src/components/Verses/AddVerse.js ***!
   \*******************************************/
 
+/*!*******************************************!*\
+  !*** ./src/components/admin/Adminpage.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/components/admin/BlockPage.js ***!
+  \*******************************************/
+
 /*!********************************************!*\
   !*** ./node_modules/axios/lib/defaults.js ***!
   \********************************************/
 
 /*!********************************************!*\
   !*** ./node_modules/axios/lib/env/data.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/admin/Deletepage.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/admin/Tablespage.js ***!
   \********************************************/
 
 /*!*********************************************!*\

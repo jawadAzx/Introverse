@@ -20,7 +20,7 @@ export const postVerse = (data) => {
 
 export const getVerse = (name) => {
     // console.log("in get",name)
-    const getRequest = "verses?username=" + name 
+    const getRequest = "verses?username=" + name
 
     return (dispatch) => {
         axios.get(getRequest)
@@ -50,10 +50,42 @@ export const likeVerse = (id) => {
             })
     }
 }
+export const deleteVerse = (username, id) => {
+    const deleteRequest = "verses?method=delete?id=" + id + "?username=" + username + ""
+    return (dispatch) => {
+        axios.get(deleteRequest)
+            .then(response => {
+                dispatch({
+                    type: "DELETE_VERSE",
+                    payload: response
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+
+// export const likeVerse = (name) => {
+//     const getRequest = "verses?username=" + name
+
+//     return (dispatch) => {
+//         axios.get(getRequest)
+//             .then(response => {
+//                 dispatch({
+//                     type: "GET_VERSE",
+//                     payload: response
+//                 })
+//             })
+//             .catch(err => {
+//                 console.log(err)
+//             })
+//     }
+// }
 
 // export const getTweet = (user) => {
 //     console.log("Get Tweet" , verse)
-//     getRequest = "users?username=" + temp[0] + "&id=" + 
+//     getRequest = "users?username=" + temp[0] + "&id=" +
 //     return (dispatch) => {
 //         axios.get(verse, user)
 //             .then(response => {

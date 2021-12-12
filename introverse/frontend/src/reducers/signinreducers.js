@@ -9,10 +9,17 @@ const signinreducers = (state = initialData, action) => {
         case 'GET_DATA_SIGN_IN':
             const newdata = data.data.replace(/&quot;/g, '"')
             const finalData = JSON.parse(newdata)
+            console.log(finalData.blocked, "LOK")
+            let x = true
+
+            if (finalData.blocked === 1) {
+                x = false
+            }
             return {
                 ...state,
                 user: finalData,
-                allowed: true,
+
+                allowed: x,
             }
         case 'INCORRECT_CREDENTIALS':
             return {

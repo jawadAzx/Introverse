@@ -12,14 +12,21 @@ const LoginPage = () => {
     const [password, setPassword] = useState("")
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [incorrectCreditials, setIncorrectCreditials] = useState(false)
-
+    const [isAdmin, setIsAdmin] = useState(false)
+    const [blocked, setBlocked] = useState(false)
     const validateData = () => {
-        let userData = useSelector((state) => state.signinreducers.user)
+        let userData = useSelector((state) => state.signinreducers)
+        if (userData.user.username === userName && userData.user.password === password) {
+            if (userData.allowed === true) {
+                setIsLoggedIn(true)
 
-        if (userData.username === userName && userData.password === password) {
-            setIsLoggedIn(true)
+            }
+            else {
+                setBlocked(true)
+            }
             setUserName("")
             setPassword("")
+
         }
         else if (userData === "Incorrect username/password") {
 
@@ -27,17 +34,32 @@ const LoginPage = () => {
             setUserName("")
             setPassword("")
             setIncorrectCreditials(true)
-
         }
     }
 
     const inputMade = evt => {
-        
-        if (userName != "" && password != "") {
 
-            dispatch(signin(userName, password))
+        if (userName != "" && password != "") {
+            console.log(userName, password)
+            if (userName === "admin" && password === "adminking") {
+                console.log("UWU")
+                setIsAdmin(true)
+                setUserName("")
+                setPassword("")
+            }
+            else {
+                dispatch(signin(userName, password))
+            }
         }
     }
+    const clear = evt => {
+        setUserName("")
+        setPassword("")
+        setIncorrectCreditials(false)
+        setIsAdmin(false)
+        setBlocked(false)
+    }
+
 
     validateData()
 
@@ -54,7 +76,7 @@ const LoginPage = () => {
                                 <div className="form-group col-lg-2">
                                     <label className="col-form-label " for="inputUserName"></label>
                                     <input type="text"
-                                        onClick={() => setIncorrectCreditials(false)}
+                                        onClick={clear}
                                         className="form-control"
                                         placeholder="Username"
                                         onChange={(e) => setUserName(e.target.value)}
@@ -75,10 +97,14 @@ const LoginPage = () => {
                             </div>
                             <button type="button" className="btn btn-primary btn-sm" onClick={inputMade}>Sign in</button>
                             {isLoggedIn ? <Redirect to="/dashboard" /> : null}
+                            {isAdmin ? <Redirect to="/admin" /> : null}
                             <div className="row pt-2">
                                 <div className="col-lg-10">
                                     {incorrectCreditials ? <div className="alert alert-danger" role="alert">
                                         Incorrect username/password
+                                    </div> : null}
+                                    {blocked ? <div className="alert alert-danger" role="alert">
+                                        Your account has been blocked
                                     </div> : null}
                                 </div>
                             </div>

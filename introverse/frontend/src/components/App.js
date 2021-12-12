@@ -7,7 +7,10 @@ import Dashboard from "./Dashboard"
 import store from "../store"
 import { Provider } from "react-redux";
 import SearchResults from './searchs/SearchResults';
-
+import Adminpage from "../components/admin/Adminpage"
+import Tablespage from "../components/admin/Tablespage"
+import BlockPage from './admin/BlockPage';
+import Deletepage from './admin/Deletepage';
 const App = () => {
   return (
     <Provider store={store}>
@@ -17,6 +20,10 @@ const App = () => {
           <Route exact path="/signup" component={SignupPage} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/searchresults" component={SearchResults} />
+          <Route exact path="/admin" component={Adminpage} />
+          <Route exact path="/tables" component={Tablespage} />
+          <Route exact path="/block" component={BlockPage} />
+          <Route exact path="/deleteverse" component={Deletepage} />
         </Switch>
       </Router>
     </Provider>
