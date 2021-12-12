@@ -236,6 +236,8 @@
 
 /*! export defaultMergeProps [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export deleteVerse [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export devToolsEnhancer [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export dom [provided] [no usage info] [missing usage info prevents renaming] */
@@ -804,6 +806,10 @@
 
 /*!********************************************!*\
   !*** ./node_modules/axios/lib/env/data.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./src/components/admin/Deletepage.js ***!
   \********************************************/
 
 /*!********************************************!*\

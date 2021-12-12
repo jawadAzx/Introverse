@@ -53,7 +53,7 @@ const Adminpage = () => {
                             <div className="card-body">
                                 <h5 className="card-title">Admin access privelege #2</h5>
                                 <button type="button" className="btn btn-primary" onClick={del} >Delete Verse :)</button>
-                                {tables ? <Redirect to='/tables' /> : null}
+                                {dell ? <Redirect to='/deleteverse' /> : null}
                             </div>
                         </div>
                     </div>

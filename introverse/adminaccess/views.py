@@ -19,7 +19,7 @@ def adminaccess(request):
                 'verses_table': verses_table,
                 'passwords_table': passwords_table
             }
-            print(data,"data")
+            # print(data,"data")
             return render(request, 'adminaccess.html',{'adminaccess':json.dumps(data)})
         else:
             if (query == "block"):

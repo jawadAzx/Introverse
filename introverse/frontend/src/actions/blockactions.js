@@ -10,6 +10,7 @@ export const block = (user) => {
             });
     };
 }
+
 export const unblock = (user) => {
     return (dispatch) => {
         const Request = "/adminaccess?username=" + user + "&query=" + "unblock";
@@ -19,4 +20,4 @@ export const unblock = (user) => {
                 dispatch({ type: 'unBLOCK_USER', user });
             });
     };
-}    
+}

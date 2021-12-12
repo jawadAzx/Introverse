@@ -18,7 +18,6 @@ def insert_verse(verse,username):
               VALUES(?,?,?,?,?) '''
    
     data = (username,id,verse,0,0)
-    # print(data)
     cur.execute(sql, (data))
     conn.commit()
     return cur.lastrowid
@@ -29,5 +28,10 @@ def get_verse(user):
     cur = conn.cursor()
     cur.execute('SELECT verse,id FROM verses WHERE username = ?;', [user])
     temp = cur.fetchall()
-    print(temp,"end")
     return temp
+
+def delete_verse(username,id):
+    conn = sqlite3.connect('./db.sqlite3')
+    cur = conn.cursor()
+    cur.execute('DELETE FROM verses WHERE id = ? AND username = ?;', (id, username))
+    conn.commit()
