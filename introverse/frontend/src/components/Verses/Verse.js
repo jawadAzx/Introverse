@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { likeVerse } from '../../actions/verseAction'
 import { useDispatch } from 'react-redux'
 
-const Verse = ({ key ,verse }) => {
+const Verse = ({ verse, id, likes }) => {
 
     const [print, setPrint] = useState("")
     const [show, setShow] = useState(false)
@@ -26,10 +26,7 @@ const Verse = ({ key ,verse }) => {
     if(likeisClick === true)
     {
         const dispatch = useDispatch()
-        console.log("key", key)
-        console.log("verse", verse)
-        console.log("AHAHAHAHAHAH")
-        dispatch(likeVerse(0))
+        dispatch(likeVerse(id))
         // setLikeisClick(false)
     }
     return (
@@ -47,7 +44,7 @@ const Verse = ({ key ,verse }) => {
                     <div className="card-body">
                         {/* <h4 className="card-title">Verse</h4> */}
                         <p className="card-text">{print}</p>
-                        {/* <p className='card-text'></> */}
+                        <p className='card-text'>likes {likes}</p>
                     </div>
                 </div>
             </div> : <div>   </div>}

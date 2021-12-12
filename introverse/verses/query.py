@@ -27,7 +27,7 @@ def get_verse(user):
     print("USER", user)
     conn = sqlite3.connect('./db.sqlite3')
     cur = conn.cursor()
-    cur.execute('SELECT verse,id FROM verses WHERE username = ?;', [user])
+    cur.execute('SELECT verse,id,numoflikes FROM verses WHERE username = ?;', [user])
     temp = cur.fetchall()
     print(temp,"end")
     return temp
@@ -35,7 +35,6 @@ def get_verse(user):
 def add_like(id):
     conn = sqlite3.connect('./db.sqlite3')
     cur = conn.cursor()
-    id = 0
     likes = 0
     cur.execute('SELECT numoflikes FROM verses WHERE id = ?;' ,[id])
     likes = cur.fetchall()
@@ -48,5 +47,4 @@ def add_like(id):
     cur.execute('UPDATE verses SET numoflikes = ? WHERE id = ?', (likes,id))
     conn.commit()
     return cur.lastrowid
-
 

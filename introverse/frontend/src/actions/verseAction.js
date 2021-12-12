@@ -36,11 +36,9 @@ export const getVerse = (name) => {
     }
 }
 
-export const likeVerse = () => {
-    console.log("Like Verse chal para 0") 
+export const likeVerse = (id) => {
     return (dispatch) => {
-        console.log("Like Verse chal para")    
-        axios.post('verses', [0, "put",])
+        axios.post('verses', [id, "put",])
             .then(response => {
                 dispatch({
                     type: "ADD_VERSE",

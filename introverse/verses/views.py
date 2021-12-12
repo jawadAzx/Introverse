@@ -11,13 +11,13 @@ import urllib.parse
 def verses(request):
     if request.method == 'GET':
         data = request
-        # print(data)
         username = data.GET.get('username')
         # print(username)
         verses = None
         verse_dict = {}
         verses_list = []
         id_list = []
+        like_list = []
         try:
             verses = get_verse(username)
         except:
@@ -26,8 +26,10 @@ def verses(request):
         for verse in verses:
             verses_list.append(verse[0])
             id_list.append(verse[1])
+            like_list.append(verse[2])
         verse_dict["verse"] = verses_list
         verse_dict["id"] = id_list
+        verse_dict["like"] = like_list
         # print(verse_dict)
         # to_ret = {
         # 'verses': verse_dict,
@@ -37,9 +39,7 @@ def verses(request):
 
     elif request.method == 'POST':
         data = request.body.decode('utf-8')
-        print("Post ka data", data)
         cond = data[-5:-2]
-        print("cond", cond)
         if (cond == "put"):
             #For put request
             id = data[1:-7]
