@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { likeVerse } from '../../actions/verseAction'
 import { useDispatch } from 'react-redux'
 import { getVerse } from '../../actions/verseAction'
-
+import { deleteVerse } from '../../actions/verseAction'
 const Verse = ({ verse, id, likes, user }) => {
     const dispatch = useDispatch()
     const [print, setPrint] = useState("")
@@ -25,10 +25,20 @@ const Verse = ({ verse, id, likes, user }) => {
         setAnotherBool(true)
     }
 
-    if (likeisClick === true) {
-        dispatch(likeVerse(id))
-        dispatch(getVerse(user))
-        setLikeisClick(false)
+
+    const inputmade = evt => {
+        if (evt.target.id === "like") {
+            dispatch(likeVerse(id))
+            dispatch(getVerse(user))
+            setLikeisClick(false)
+        }
+        else if (evt.target.id === "comment") {
+            console.log("comment")
+        }
+        else if (evt.target.id === "delete") {
+            dispatch(deleteVerse(user, id))
+            dispatch(getVerse(user))
+        }
     }
     return (
         <div>
@@ -36,9 +46,9 @@ const Verse = ({ verse, id, likes, user }) => {
                 <div className="card mb-3" style={{ width: '20rem' }}>
                     <div className="card-header">{userData.username} said
                         <spam className="float-right">
-                            <button type="button" class="btn btn-info btn-sm " onClick={likeClicked}>Like</button>
-
-                            <button type="button" class="ml-2 btn btn-info btn-sm ">Comment</button>
+                            <button type="button" class="btn btn-info btn-sm " onClick={inputmade} id="like" >Like</button>
+                            <button type="button" class="ml-2 btn btn-info btn-sm " onClick={inputmade} id="comment">Comment</button>
+                            <button type="button" class="ml-2 btn btn-info btn-sm " onClick={inputmade} id="delete">Delete</button>
                         </spam>
 
                     </div>
