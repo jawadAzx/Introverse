@@ -29,6 +29,11 @@ const verseReducers = (state = initialData, action) => {
       return{
         ...state, 
       }
+
+    case "INCREASE_COMMENT_NUMBER":
+        return{
+          ...state, 
+        }
     default:
       return state;
   }

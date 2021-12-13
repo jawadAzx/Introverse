@@ -26,7 +26,7 @@ def get_verse(user):
     print("USER", user)
     conn = sqlite3.connect('./db.sqlite3')
     cur = conn.cursor()
-    cur.execute('SELECT verse,id,numoflikes FROM verses WHERE username = ?;', [user])
+    cur.execute('SELECT verse,id,numofcomments,numoflikes FROM verses WHERE username = ?;', [user])
     temp = cur.fetchall()
     print(temp,"end")
     return temp
@@ -54,3 +54,19 @@ def delete_verse(username,id):
     cur = conn.cursor()
     cur.execute('DELETE FROM verses WHERE id = ? AND username = ?;', (id, username))
     conn.commit()
+
+def add_comment_number(id):
+    conn = sqlite3.connect('./db.sqlite3')
+    cur = conn.cursor()
+    comments = 0
+    cur.execute('SELECT numofcomments FROM verses WHERE id = ?;' ,[id])
+    comments = cur.fetchall()
+    comments = comments[0][0]
+    if comments == None or comments == 0:
+        comments = 1
+    else:
+        comments = comments + 1
+
+    cur.execute('UPDATE verses SET numofcomments = ? WHERE id = ?', (comments,id))
+    conn.commit()
+    return cur.lastrowid

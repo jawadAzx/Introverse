@@ -38,10 +38,25 @@ export const getVerse = (name) => {
 
 export const likeVerse = (id) => {
     return (dispatch) => {
-        axios.post('verses', [id, "put",])
+        axios.post('verses', [id, "put1",])
             .then(response => {
                 dispatch({
-                    type: "ADD_VERSE",
+                    type: "ADD_LIKE",
+                    payload: id
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+
+export const add_comment_number = (id) => {
+    return (dispatch) => {
+        axios.post('verses', [id, "put2",])
+            .then(response => {
+                dispatch({
+                    type: "INCREASE_COMMENT_NUMBER",
                     payload: id
                 })
             })

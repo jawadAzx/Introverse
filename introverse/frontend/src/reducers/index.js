@@ -4,6 +4,7 @@ import signinreducers from "./signinreducers";
 import verseReducers from "./verseReducers";
 import searchReducers from "./searchreducers";
 import tablesReducers from "./tablesreducers";
+import commentReducers from "./commentReducers";
 
 export default combineReducers({
   signupreducers,
@@ -11,4 +12,5 @@ export default combineReducers({
   verseReducers,
   searchReducers,
   tablesReducers,
+  commentReducers,
 });

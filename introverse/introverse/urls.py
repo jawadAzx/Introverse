@@ -22,5 +22,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('verses.urls')),  
     path('', include('followers.urls')),
-    path('', include('adminaccess.urls')) 
+    path('', include('adminaccess.urls')),
+    path('', include('comments.urls')) 
+
 ]
