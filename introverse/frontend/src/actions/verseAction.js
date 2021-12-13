@@ -1,8 +1,6 @@
 import axios from "axios"
-import Verses from "../components/Verses/Verses"
 
 export const postVerse = (data) => {
-    console.log("Post Tweet", data)
 
     return (dispatch) => {
         axios.post('verses', data)
@@ -10,23 +8,6 @@ export const postVerse = (data) => {
                 dispatch({
                     type: "ADD_VERSE",
                     payload: data
-                })
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-}
-
-export const getVerse = (name) => {
-    const getRequest = "verses?username=" + name
-
-    return (dispatch) => {
-        axios.get(getRequest)
-            .then(response => {
-                dispatch({
-                    type: "GET_VERSE",
-                    payload: response
                 })
             })
             .catch(err => {
@@ -64,6 +45,40 @@ export const add_comment_number = (id) => {
             })
     }
 }
+
+export const getVerse = (name) => {
+    const getRequest = "verses?method=getVerse?username=" + name
+
+    return (dispatch) => {
+        axios.get(getRequest)
+            .then(response => {
+                dispatch({
+                    type: "GET_VERSE",
+                    payload: response
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+export const getAllVerse = (name) => {
+    const getRequest = "verses?method=getAllVerse?username=" + name
+
+    return (dispatch) => {
+        axios.get(getRequest)
+            .then(response => {
+                dispatch({
+                    type: "GET_ALL_VERSE",
+                    payload: response
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+
 export const deleteVerse = (username, id) => {
     const deleteRequest = "verses?method=delete?id=" + id + "?username=" + username + ""
     return (dispatch) => {
@@ -80,36 +95,3 @@ export const deleteVerse = (username, id) => {
     }
 }
 
-// export const likeVerse = (name) => {
-//     const getRequest = "verses?username=" + name
-
-//     return (dispatch) => {
-//         axios.get(getRequest)
-//             .then(response => {
-//                 dispatch({
-//                     type: "GET_VERSE",
-//                     payload: response
-//                 })
-//             })
-//             .catch(err => {
-//                 console.log(err)
-//             })
-//     }
-// }
-
-// export const getTweet = (user) => {
-//     console.log("Get Tweet" , verse)
-//     getRequest = "users?username=" + temp[0] + "&id=" +
-//     return (dispatch) => {
-//         axios.get(verse, user)
-//             .then(response => {
-//                 dispatch({
-//                     type: "GET_VERSE",
-//                     payload: response
-//                 })
-//             })
-//             .catch(err => {
-//                 console.log(err)
-//             })
-//     }
-// }

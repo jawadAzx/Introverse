@@ -1,9 +1,10 @@
 import axios from "axios";
 
-export const signin = (user) => {
+export const signin = (user,password) => {
     return (dispatch) => {
+        console.log("signin action",password);
         const temp = user.split(" ")
-        const getRequest = "users?username=" + temp[0] + "&password=" + temp[1] 
+        const getRequest = "users?username=" + temp[0] + "&password=" + password
         axios.get(getRequest, user)
             .then(response => {
                 dispatch({

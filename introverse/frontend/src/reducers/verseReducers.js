@@ -13,6 +13,13 @@ const verseReducers = (state = initialData, action) => {
         ...state,
         verse: finalData,
       };
+    case "GET_ALL_VERSE":
+      const nd = data.data.replace(/&quot;/g, '"')
+      const fd = JSON.parse(nd)
+      return {
+        ...state,
+        verse: fd,
+      };
     case "ADD_VERSE":
       return {
         ...state,
@@ -24,14 +31,14 @@ const verseReducers = (state = initialData, action) => {
       };
 
     case "ADD_LIKE":
-      return{
-        ...state, 
+      return {
+        ...state,
       }
 
     case "INCREASE_COMMENT_NUMBER":
-        return{
-          ...state, 
-        }
+      return {
+        ...state,
+      }
     default:
       return state;
   }

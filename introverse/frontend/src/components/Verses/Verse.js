@@ -8,10 +8,10 @@ import { getVerse } from '../../actions/verseAction'
 import { deleteVerse } from '../../actions/verseAction'
 import { postComment } from '../../actions/commentAction'
 import { add_comment_number } from '../../actions/verseAction'
-import { Link, Redirect, useNavigate} from "react-router-dom";
+import { Link, Redirect, useNavigate } from "react-router-dom";
 
 
-const Verse = ({ verse, id, likes, comment_count ,user }) => {
+const Verse = ({ verse, id, likes, comment_count, user, owner }) => {
     const dispatch = useDispatch()
     const [print, setPrint] = useState("")
     const [show, setShow] = useState(false)
@@ -20,7 +20,7 @@ const Verse = ({ verse, id, likes, comment_count ,user }) => {
     const [likeisClick, setLikeisClick] = useState(false);
     const [commentisClick, setCommentisClick] = useState(false);
     const [comment, setComment] = useState("")
-
+    console.log(owner)
     const likeClicked = (e) => {
         e.preventDefault();
         setLikeisClick(true);
@@ -59,7 +59,7 @@ const Verse = ({ verse, id, likes, comment_count ,user }) => {
         <div>
             {show ? <div>
                 <div className="card mb-3" style={{ width: '20rem' }}>
-                    <div className="card-header">{userData.username} said
+                    <div className="card-header">{owner} said
                         <spam className="float-right">
                             <button type="button" class="btn btn-info btn-sm " onClick={inputmade} id="like" >Like</button>
                             <button type="button" class="ml-2 btn btn-info btn-sm " onClick={inputmade} id="comment">Comment</button>
@@ -71,10 +71,10 @@ const Verse = ({ verse, id, likes, comment_count ,user }) => {
                         <p className="card-text">{print}</p>
                         <p className='card-text'>likes {likes}</p>
                         <p className='card-text'>comments {comment_count}</p>
-                        <button type="button" class="btn btn-info btn-sm "> <Link to ={{pathname: '/comments', state: {num: id}}}> View Comment </Link> </button>
-                        <div className = 'form-group'>
-                        <label>Share your comments</label>
-                        <textarea className="form-control" type="text" name="body" value={comment} onChange={(e) => onChange(e.target.value)}></textarea>
+                        <button type="button" class="btn btn-info btn-sm "> <Link to={{ pathname: '/comments', state: { num: id } }}> View Comment </Link> </button>
+                        <div className='form-group'>
+                            <label>Share your comments</label>
+                            <textarea className="form-control" type="text" name="body" value={comment} onChange={(e) => onChange(e.target.value)}></textarea>
                         </div>
                     </div>
                 </div>

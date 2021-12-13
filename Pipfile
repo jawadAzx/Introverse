@@ -9,8 +9,8 @@ djangorestframework = "*"
 pylint = "*"
 pylint-django = "*"
 pylint-plugin-utils = "*"
-Django = "*"
 pytz = "*"
+Django = "*"
 
 [dev-packages]
 

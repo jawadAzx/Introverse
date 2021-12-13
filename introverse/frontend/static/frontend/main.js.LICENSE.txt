@@ -264,6 +264,8 @@
 
 /*! export generatePath [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .generatePath */
 
+/*! export getAllVerse [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export getBatch [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getComments [provided] [no usage info] [missing usage info prevents renaming] */
@@ -878,6 +880,10 @@
 
 /*!***********************************************!*\
   !*** ./node_modules/axios/lib/core/settle.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/components/searchs/SearchVerse.js ***!
   \***********************************************/
 
 /*!************************************************!*\

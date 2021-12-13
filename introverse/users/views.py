@@ -5,20 +5,37 @@ from .query import insert_users, insert_user_password
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+import uuid
+import hashlib
+ 
+def hash_password(password):
+    salt = uuid.uuid4().hex
+    return hashlib.sha256(salt.encode() + password.encode()).hexdigest() + ':' + salt
+    
+def check_password(hashed_password, user_password):
+    password, salt = hashed_password.split(':')
+    return password == hashlib.sha256(salt.encode() + user_password.encode()).hexdigest()
 
 @csrf_exempt
 def users(request):
     if request.method == 'GET':
         data = request
         query = data.GET.get('query')
-
         # print(query, follow, follower, "LOOK HERE")
         if query == None:
             username = data.GET.get('username')
-            # print("BRUG",data.GET.get('username'))
+            password = data.GET.get('password')
+            # password = hash_password(password)
+
             user = None
             try:
                 users = getUserData(username)
+                what = "None"
+                # print(password, users[8])
+
+                if (check_password(users[8], password)):
+                    print("User found")
+                    what = "User found"
                 user = {
                     'username': users[0],
                     'name': users[1],
@@ -27,7 +44,7 @@ def users(request):
                     'numoffollowing': users[4],
                     'blocked': users[5],
                     'email': users[6],
-                    'password': users[8]
+                    'SIGNINCYKA': what
                 }
             except:
                 # print("Incorrect username/password")
@@ -66,7 +83,8 @@ def users(request):
         userfunc = temp[0:-1]
         passwordfunc = list()
         passwordfunc.append(temp[0])
-        passwordfunc.append(temp[-1])
+        hash_object = hash_password(temp[-1])
+        passwordfunc.append(hash_object)
         insert_users(userfunc)
         insert_user_password(passwordfunc)
         return render(request, 'users.html')

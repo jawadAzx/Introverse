@@ -17,10 +17,9 @@ const LoginPage = () => {
     const [inCLown, setInClown] = useState(false)
     const validateData = () => {
         let userData = useSelector((state) => state.signinreducers)
-        if (userData.user.username === userName && userData.user.password === password) {
+        if (userData.user.username === userName && userData.user.SIGNINCYKA === "User found") {
             if (userData.allowed === true) {
                 setIsLoggedIn(true)
-
             }
             else {
                 setBlocked(true)
@@ -29,7 +28,7 @@ const LoginPage = () => {
             setPassword("")
 
         }
-        else if (userData.user === "Incorrect username/password") {
+        else if (userData.user === "Incorrect username/password" || userData.user.SIGNINCYKA === "None") {
             dispatch(signinFailed())
             setUserName("")
             setPassword("")
@@ -51,6 +50,7 @@ const LoginPage = () => {
             }
 
             else {
+                // console.log(password,"ahahahahah")
                 dispatch(signin(userName, password))
             }
         }

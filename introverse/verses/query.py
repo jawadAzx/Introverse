@@ -26,9 +26,18 @@ def get_verse(user):
     print("USER", user)
     conn = sqlite3.connect('./db.sqlite3')
     cur = conn.cursor()
-    cur.execute('SELECT verse,id,numofcomments,numoflikes FROM verses WHERE username = ?;', [user])
+    cur.execute('SELECT verse,id,numofcomments,numoflikes,username FROM verses WHERE username = ?;', [user])
     temp = cur.fetchall()
     print(temp,"end")
+    return temp
+
+def get_all_verse(user):
+    print("USER", user)
+    conn = sqlite3.connect('./db.sqlite3')
+    cur = conn.cursor()
+    cur.execute('SELECT verse,id,numofcomments,numoflikes,username FROM verses WHERE username NOT LIKE ?;', [user])
+    temp = cur.fetchall()
+    # print(temp,"end")
     return temp
 
 def add_like(id):
@@ -47,7 +56,6 @@ def add_like(id):
     conn.commit()
     return cur.lastrowid
 
-    return temp
 
 def delete_verse(username,id):
     conn = sqlite3.connect('./db.sqlite3')
