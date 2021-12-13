@@ -14,6 +14,7 @@ const LoginPage = () => {
     const [incorrectCreditials, setIncorrectCreditials] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
     const [blocked, setBlocked] = useState(false)
+    const [inCLown, setInClown] = useState(false)
     const validateData = () => {
         let userData = useSelector((state) => state.signinreducers)
         if (userData.user.username === userName && userData.user.password === password) {
@@ -28,8 +29,7 @@ const LoginPage = () => {
             setPassword("")
 
         }
-        else if (userData === "Incorrect username/password") {
-
+        else if (userData.user === "Incorrect username/password") {
             dispatch(signinFailed())
             setUserName("")
             setPassword("")
@@ -38,15 +38,18 @@ const LoginPage = () => {
     }
 
     const inputMade = evt => {
-
+        if (evt.target.id === "clown") {
+            setInClown(true)
+            setUserName("")
+            setPassword("")
+        }
         if (userName != "" && password != "") {
-            console.log(userName, password)
             if (userName === "admin" && password === "adminking") {
-                console.log("UWU")
                 setIsAdmin(true)
                 setUserName("")
                 setPassword("")
             }
+
             else {
                 dispatch(signin(userName, password))
             }
@@ -96,13 +99,17 @@ const LoginPage = () => {
                                 </div>
                             </div>
                             <button type="button" className="btn btn-primary btn-sm" onClick={inputMade}>Sign in</button>
+                            <button type="button" className="btn btn-primary btn-sm ml-3" onClick={inputMade} id="clown">Clown (:</button>
+
                             {isLoggedIn ? <Redirect to="/dashboard" /> : null}
                             {isAdmin ? <Redirect to="/admin" /> : null}
+                            {inCLown ? <Redirect to="/clown" /> : null}
                             <div className="row pt-2">
                                 <div className="col-lg-10">
                                     {incorrectCreditials ? <div className="alert alert-danger" role="alert">
                                         Incorrect username/password
                                     </div> : null}
+
                                     {blocked ? <div className="alert alert-danger" role="alert">
                                         Your account has been blocked
                                     </div> : null}

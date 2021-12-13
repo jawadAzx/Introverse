@@ -1,4 +1,5 @@
 import axios from "axios"
+import Verses from "../components/Verses/Verses"
 
 export const postVerse = (data) => {
     console.log("Post Tweet", data)
@@ -18,7 +19,6 @@ export const postVerse = (data) => {
 }
 
 export const getVerse = (name) => {
-    // console.log("in get",name)
     const getRequest = "verses?username=" + name
 
     return (dispatch) => {
@@ -35,6 +35,35 @@ export const getVerse = (name) => {
     }
 }
 
+export const likeVerse = (id) => {
+    return (dispatch) => {
+        axios.post('verses', [id, "put1",])
+            .then(response => {
+                dispatch({
+                    type: "ADD_LIKE",
+                    payload: id
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+
+export const add_comment_number = (id) => {
+    return (dispatch) => {
+        axios.post('verses', [id, "put2",])
+            .then(response => {
+                dispatch({
+                    type: "INCREASE_COMMENT_NUMBER",
+                    payload: id
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
 export const deleteVerse = (username, id) => {
     const deleteRequest = "verses?method=delete?id=" + id + "?username=" + username + ""
     return (dispatch) => {
@@ -52,7 +81,7 @@ export const deleteVerse = (username, id) => {
 }
 
 // export const likeVerse = (name) => {
-//     const getRequest = "verses?username=" + name 
+//     const getRequest = "verses?username=" + name
 
 //     return (dispatch) => {
 //         axios.get(getRequest)
@@ -70,7 +99,7 @@ export const deleteVerse = (username, id) => {
 
 // export const getTweet = (user) => {
 //     console.log("Get Tweet" , verse)
-//     getRequest = "users?username=" + temp[0] + "&id=" + 
+//     getRequest = "users?username=" + temp[0] + "&id=" +
 //     return (dispatch) => {
 //         axios.get(verse, user)
 //             .then(response => {

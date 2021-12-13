@@ -5,7 +5,6 @@ export const signup = (user) => {
     return (dispatch) => {
         axios.post("users", user)
             .then(response => {
-                // console.log(response)
                 dispatch({
                     type: "SIGNUP",
                     payload: response

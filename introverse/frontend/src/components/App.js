@@ -11,6 +11,8 @@ import Adminpage from "../components/admin/Adminpage"
 import Tablespage from "../components/admin/Tablespage"
 import BlockPage from './admin/BlockPage';
 import Deletepage from './admin/Deletepage';
+import Clown from '../components/clown/Clown';
+import ViewComments from './ViewComments';
 const App = () => {
   return (
     <Provider store={store}>
@@ -24,6 +26,8 @@ const App = () => {
           <Route exact path="/tables" component={Tablespage} />
           <Route exact path="/block" component={BlockPage} />
           <Route exact path="/deleteverse" component={Deletepage} />
+          <Route exact path="/clown" component={Clown} />
+          <Route exact path="/comments" component={ViewComments} />
         </Switch>
       </Router>
     </Provider>

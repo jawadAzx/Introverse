@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'verses',
     'followers',
     'adminaccess',
+    'comments',
 ]
 
 MIDDLEWARE = [

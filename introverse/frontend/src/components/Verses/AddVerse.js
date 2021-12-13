@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { postVerse } from '../../actions/verseAction';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { getVerse } from '../../actions/verseAction';
 
 const AddVerse = () => {
 
@@ -14,7 +14,6 @@ const AddVerse = () => {
   const userData = useSelector((state) => state.signinreducers.user)
   const onChange = (e) => setVerse(e);
   const onSubmit = (e) => {
-
     e.preventDefault();
     setcallfunction(true)
   };
@@ -22,6 +21,9 @@ const AddVerse = () => {
     const tuple = [verse, userData.username]
     dispatch(postVerse(tuple))
     setVerse("")
+    dispatch(getVerse(userData.username))
+    dispatch(getVerse(userData.username))
+
     setcallfunction(false)
   }
 

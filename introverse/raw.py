@@ -50,6 +50,14 @@ sql_create_followers_table = """ CREATE TABLE IF NOT EXISTS followers(
     follower text not null UNIQUE,
     FOREIGN KEY (username) REFERENCES users(username)
     ); """
+
+sql_create_comments_table = """ CREATE TABLE IF NOT EXISTS comments(
+    username text not null,
+    id integer not null,
+    comment_id integer not null,
+    comment text not null,
+    PRIMARY KEY (username, id, comment_id)
+    ); """
 # create a database connection
 conn = create_connection(database)
 
@@ -62,6 +70,8 @@ if conn is not None:
     create_table(conn, sql_create_passwords_table)
     create_table(conn, sql_create_verses_table)
     create_table(conn, sql_create_followers_table)
+    create_table(conn, sql_create_comments_table)
+
 
     print("MADE")
 else:
