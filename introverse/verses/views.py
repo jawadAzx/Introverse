@@ -2,7 +2,6 @@ from django.shortcuts import render
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .query import *
-import urllib.parse
 
 @csrf_exempt
 # Create your views here.
@@ -30,6 +29,7 @@ def verses(request):
             verses_list = []
             id_list = []
             like_list = []
+            comment_count = []
         
             # username = data.GET.get('username')
             # verses = None
@@ -51,20 +51,28 @@ def verses(request):
             for verse in verses:
                 verses_list.append(verse[0])
                 id_list.append(verse[1])
-                like_list.append(verse[2])
+                comment_count.append(verse[2])
+                like_list.append(verse[3])
+                
             verse_dict["verse"] = verses_list
             verse_dict["id"] = id_list
             verse_dict["like"] = like_list
+            verse_dict["comment"] = comment_count
 
             return render(request, 'verses.html', {'verses': json.dumps(verse_dict)})
 
     elif request.method == 'POST':
         data = request.body.decode('utf-8')
-        cond = data[-5:-2]
-        if (cond == "put"):
+        newData = data.split(",")
+        cond = newData[1][1:-2]
+        if (cond == "put1"):
             #For put request
-            id = data[1:-7]
+            id = newData[0][1:]
             add_like(int(id))
+        
+        elif (cond == "put2"):
+            id = newData[0][1:]
+            add_comment_number(int(id))
 
         else:
             temp = data[1:-1]

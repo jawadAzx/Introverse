@@ -158,6 +158,8 @@
 
 /*! export __esModule [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export add_comment_number [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export applyMiddleware [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export batch [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .unstable_batchedUpdates */
@@ -263,6 +265,8 @@
 /*! export generatePath [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/react-router/esm/react-router.js .generatePath */
 
 /*! export getBatch [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export getComments [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export getData [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -391,6 +395,8 @@
 /*! export parse [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export parsePath [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export postComment [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export postVerse [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -711,6 +717,10 @@
   \*************************************/
 
 /*!**************************************!*\
+  !*** ./src/actions/commentAction.js ***!
+  \**************************************/
+
+/*!**************************************!*\
   !*** ./src/actions/searchactions.js ***!
   \**************************************/
 
@@ -755,6 +765,10 @@
   \****************************************/
 
 /*!****************************************!*\
+  !*** ./src/components/ViewComments.js ***!
+  \****************************************/
+
+/*!****************************************!*\
   !*** ./src/reducers/searchreducers.js ***!
   \****************************************/
 
@@ -790,6 +804,10 @@
   !*** ./src/components/Verses/Verses.js ***!
   \*****************************************/
 
+/*!*****************************************!*\
+  !*** ./src/reducers/commentReducers.js ***!
+  \*****************************************/
+
 /*!******************************************!*\
   !*** ./node_modules/prop-types/index.js ***!
   \******************************************/
@@ -822,12 +840,20 @@
   !*** ./src/components/admin/Tablespage.js ***!
   \********************************************/
 
+/*!********************************************!*\
+  !*** ./src/components/comments/Comment.js ***!
+  \********************************************/
+
 /*!*********************************************!*\
   !*** ./node_modules/history/esm/history.js ***!
   \*********************************************/
 
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
+  !*** ./src/components/comments/Comments.js ***!
   \*********************************************/
 
 /*!*********************************************!*\

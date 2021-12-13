@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const getData = () => {
-    // console.log("getData");
     return (dispatch) => {
         axios
             .get(`/adminaccess`)

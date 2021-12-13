@@ -6,7 +6,12 @@ import { likeVerse } from '../../actions/verseAction'
 import { useDispatch } from 'react-redux'
 import { getVerse } from '../../actions/verseAction'
 import { deleteVerse } from '../../actions/verseAction'
-const Verse = ({ verse, id, likes, user }) => {
+import { postComment } from '../../actions/commentAction'
+import { add_comment_number } from '../../actions/verseAction'
+import { Link, Redirect, useNavigate} from "react-router-dom";
+
+
+const Verse = ({ verse, id, likes, comment_count ,user }) => {
     const dispatch = useDispatch()
     const [print, setPrint] = useState("")
     const [show, setShow] = useState(false)
@@ -14,11 +19,15 @@ const Verse = ({ verse, id, likes, user }) => {
     const userData = useSelector((state) => state.signinreducers.user)
     const [likeisClick, setLikeisClick] = useState(false);
     const [commentisClick, setCommentisClick] = useState(false);
+    const [comment, setComment] = useState("")
 
     const likeClicked = (e) => {
         e.preventDefault();
         setLikeisClick(true);
     }
+
+    const onChange = (e) => setComment(e);
+
     if (verse !== undefined && anotherBool === false) {
         setPrint(verse)
         setShow(true)
@@ -33,12 +42,18 @@ const Verse = ({ verse, id, likes, user }) => {
             setLikeisClick(false)
         }
         else if (evt.target.id === "comment") {
-            console.log("comment")
+            console.log("comment", comment)
+            dispatch(postComment(comment, id, user))
+            setComment("")
+            dispatch(add_comment_number(id))
+            dispatch(getVerse(user))
+
         }
         else if (evt.target.id === "delete") {
             dispatch(deleteVerse(user, id))
             dispatch(getVerse(user))
         }
+
     }
     return (
         <div>
@@ -53,9 +68,14 @@ const Verse = ({ verse, id, likes, user }) => {
 
                     </div>
                     <div className="card-body">
-                        {/* <h4 className="card-title">Verse</h4> */}
                         <p className="card-text">{print}</p>
                         <p className='card-text'>likes {likes}</p>
+                        <p className='card-text'>comments {comment_count}</p>
+                        <button type="button" class="btn btn-info btn-sm "> <Link to ={{pathname: '/comments', state: {num: id}}}> View Comment </Link> </button>
+                        <div className = 'form-group'>
+                        <label>Share your comments</label>
+                        <textarea className="form-control" type="text" name="body" value={comment} onChange={(e) => onChange(e.target.value)}></textarea>
+                        </div>
                     </div>
                 </div>
             </div> : <div>   </div>}

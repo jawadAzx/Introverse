@@ -62,7 +62,6 @@ const SignupPage = () => {
                                         placeholder="Name"
                                         onChange={(e) => setName(e.target.value)}
                                         value={name}
-                                        // onKeyPress={inputMade}
                                         id="inputName"></input>
                                 </div>
                             </div>
@@ -74,7 +73,6 @@ const SignupPage = () => {
                                         placeholder="youremail@domain.com"
                                         onChange={(e) => setEmail(e.target.value)}
                                         value={email}
-                                        // onKeyPress={inputMade}
                                         id="inputemail"></input>
                                 </div>
                             </div>
@@ -86,7 +84,6 @@ const SignupPage = () => {
                                         placeholder="Password"
                                         onChange={(e) => setPassword(e.target.value)}
                                         value={password}
-                                        // onKeyPress={inputMade}
                                         id="inputpassword"></input>
                                 </div>
                             </div>
@@ -98,7 +95,6 @@ const SignupPage = () => {
                                         placeholder="ConfirmPassword"
                                         onChange={(e) => setConfirmPassword(e.target.value)}
                                         value={confirmPassword}
-                                        // onKeyPress={inputMade}
                                         id="inputConfirmpassword"></input>
                                 </div>
                                 {
@@ -121,7 +117,6 @@ const SignupPage = () => {
                                         placeholder="Username"
                                         onChange={(e) => setUserName(e.target.value)}
                                         value={userName}
-                                        // onKeyPress={inputMade}
                                         id="inputusername"></input>
                                 </div>
                             </div>
@@ -133,7 +128,6 @@ const SignupPage = () => {
                                         placeholder="Enter birthday date-month-year"
                                         onChange={(e) => setDateOfBirth(e.target.value)}
                                         value={dateOfBirth}
-                                        // onKeyPress={inputMade}
                                         id="inputdob"></input>
                                 </div>
                             </div>
