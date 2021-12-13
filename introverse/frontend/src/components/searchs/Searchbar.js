@@ -30,7 +30,6 @@ const Searchbar = () => {
         setDispatched(true)
     }
     if (notFound === false && searchResults === 'User Does not exist') {
-        console.log("HERE")
         setNotFound(true)
     }
 

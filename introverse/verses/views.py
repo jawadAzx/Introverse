@@ -65,8 +65,6 @@ def verses(request):
         data = request.body.decode('utf-8')
         newData = data.split(",")
         cond = newData[1][1:-2]
-        print(cond)
-        print("cond", cond)
         if (cond == "put1"):
             #For put request
             id = newData[0][1:]

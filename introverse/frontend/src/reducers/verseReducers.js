@@ -7,7 +7,6 @@ const verseReducers = (state = initialData, action) => {
   const data = action.payload
   switch (action.type) {
     case "GET_VERSE":
-      // console.log(data)
       const newdata = data.data.replace(/&quot;/g, '"')
       const finalData = JSON.parse(newdata)
       return {
@@ -17,7 +16,6 @@ const verseReducers = (state = initialData, action) => {
     case "ADD_VERSE":
       return {
         ...state,
-        // verse: [state.verse.verses, data],
       };
     case "DELETE_VERSE":
       return {

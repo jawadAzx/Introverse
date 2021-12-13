@@ -12,7 +12,6 @@ const commentReducers = (state = initialData, action) => {
         case 'GET_COMMENTS':
             const newdata = data.data.replace(/&quot;/g, '"')
             const finalData = JSON.parse(newdata)
-            console.log(finalData)
             return {
                 ...state, 
                 comment: finalData,

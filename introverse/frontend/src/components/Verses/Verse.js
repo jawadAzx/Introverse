@@ -68,7 +68,6 @@ const Verse = ({ verse, id, likes, comment_count ,user }) => {
 
                     </div>
                     <div className="card-body">
-                        {/* <h4 className="card-title">Verse</h4> */}
                         <p className="card-text">{print}</p>
                         <p className='card-text'>likes {likes}</p>
                         <p className='card-text'>comments {comment_count}</p>

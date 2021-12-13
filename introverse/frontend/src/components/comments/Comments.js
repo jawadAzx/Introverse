@@ -11,7 +11,6 @@ const Comments = () => {
     const id = location.state.num
     const [justEntered, setJustEntered] = useState(false)
     const data = useSelector((state) => state.commentReducers.comment.comments)
-    console.log("data is" , data)
 
 
     if (justEntered === false) {

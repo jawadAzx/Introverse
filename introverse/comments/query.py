@@ -15,8 +15,6 @@ def insert_comment(username, id, comment):
     except:
         print("Error")
 
-
-    print("username", username,"id", id, "comment_id", comment_id)
     
     sql = ''' INSERT INTO comments(username,id,comment_id, comment)
               VALUES(?,?,?,?) '''

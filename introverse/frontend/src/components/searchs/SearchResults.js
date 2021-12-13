@@ -10,11 +10,9 @@ const SearchResults = () => {
     const buttonClicked = () => {
         const query = searchResults.username + ' ' + userData
         dispatch(follow(query))
-        console.log(query)
     }
     const searchResult = useSelector(state => state.searchReducers.follow_success)
-    // console.log(searchResult)
-    // dispatch(search(searchResults.username))
+
     return (
         <div>
             <Navbar />
