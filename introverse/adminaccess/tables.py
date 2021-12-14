@@ -2,7 +2,7 @@ import sqlite3
 
 
 def sql_fetch_users_table():
-    con = sqlite3.connect('db.sqlite3')
+    con = sqlite3.connect('./db.sqlite3')
 
     cur = con.cursor()
     cur.execute('SELECT * FROM  users')
@@ -10,7 +10,7 @@ def sql_fetch_users_table():
     rows = cur.fetchall()
     return rows
 def sql_fetch_followers_table():
-    con = sqlite3.connect('db.sqlite3')
+    con = sqlite3.connect('./db.sqlite3')
 
     cur = con.cursor()
     cur.execute('SELECT * FROM  followers')
@@ -21,7 +21,7 @@ def sql_fetch_followers_table():
 
 
 def sql_fetch_verses_table():
-    con = sqlite3.connect('db.sqlite3')
+    con = sqlite3.connect('./db.sqlite3')
 
     cur = con.cursor()
     cur.execute('SELECT * FROM  verses')
@@ -30,7 +30,7 @@ def sql_fetch_verses_table():
     return rows
 
 def sql_fetch_passwords_table():
-    con = sqlite3.connect('db.sqlite3')
+    con = sqlite3.connect('./db.sqlite3')
 
     cur = con.cursor()
     cur.execute('SELECT * FROM  passwords')
@@ -39,7 +39,7 @@ def sql_fetch_passwords_table():
     return rows
 
 def block(username):
-    con = sqlite3.connect('db.sqlite3')
+    con = sqlite3.connect('./db.sqlite3')
     cur = con.cursor()
     try:
         cur.execute('UPDATE users SET blocked = 1 WHERE username = ?', (username,))
@@ -50,7 +50,7 @@ def block(username):
     return True
 
 def unblock(username):
-    con = sqlite3.connect('db.sqlite3')
+    con = sqlite3.connect('./db.sqlite3')
     cur = con.cursor()
     try:
         cur.execute('UPDATE users SET blocked = 0 WHERE username = ?', (username,))

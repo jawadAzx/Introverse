@@ -61,7 +61,6 @@ def verses(request):
             verse_dict["comment"] = comment_count
             verse_dict["owner"] = owner
 
-            print(verse_dict["verse"], "UWU")
             return render(request, 'verses.html', {'verses': json.dumps(verse_dict)})
         elif todo[0] == "delete":
             verse_id = todo[1].split("=")

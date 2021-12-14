@@ -4,10 +4,10 @@ import Verses from './Verses'
 import { useSelector } from 'react-redux'
 import { likeVerse } from '../../actions/verseAction'
 import { useDispatch } from 'react-redux'
-import { getVerse } from '../../actions/verseAction'
 import { deleteVerse } from '../../actions/verseAction'
 import { postComment } from '../../actions/commentAction'
 import { add_comment_number } from '../../actions/verseAction'
+import { getAllVerse } from '../../actions/verseAction'
 import { Link, Redirect, useNavigate } from "react-router-dom";
 
 
@@ -20,7 +20,6 @@ const Verse = ({ verse, id, likes, comment_count, user, owner }) => {
     const [likeisClick, setLikeisClick] = useState(false);
     const [commentisClick, setCommentisClick] = useState(false);
     const [comment, setComment] = useState("")
-    console.log(owner)
     const likeClicked = (e) => {
         e.preventDefault();
         setLikeisClick(true);
@@ -37,8 +36,9 @@ const Verse = ({ verse, id, likes, comment_count, user, owner }) => {
 
     const inputmade = evt => {
         if (evt.target.id === "like") {
+            console.log("user ", user)
             dispatch(likeVerse(id))
-            dispatch(getVerse(user))
+            dispatch(getAllVerse(user))
             setLikeisClick(false)
         }
         else if (evt.target.id === "comment") {
@@ -46,12 +46,12 @@ const Verse = ({ verse, id, likes, comment_count, user, owner }) => {
             dispatch(postComment(comment, id, user))
             setComment("")
             dispatch(add_comment_number(id))
-            dispatch(getVerse(user))
+            dispatch(getAllVerse(user))
 
         }
         else if (evt.target.id === "delete") {
             dispatch(deleteVerse(user, id))
-            dispatch(getVerse(user))
+            dispatch(getAllVerse(user))
         }
 
     }

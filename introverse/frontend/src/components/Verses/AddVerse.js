@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { postVerse } from '../../actions/verseAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVerse } from '../../actions/verseAction';
+import { getAllVerse } from '../../actions/verseAction';
 
 const AddVerse = () => {
 
@@ -21,8 +22,8 @@ const AddVerse = () => {
     const tuple = [verse, userData.username]
     dispatch(postVerse(tuple))
     setVerse("")
-    dispatch(getVerse(userData.username))
-    dispatch(getVerse(userData.username))
+    dispatch(getAllVerse(userData.username))
+    dispatch(getAllVerse(userData.username))
 
     setcallfunction(false)
   }

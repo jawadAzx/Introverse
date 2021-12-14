@@ -1,6 +1,6 @@
 import React from 'react'
 import Verse from './Verse'
-import { getVerse, getAllVerse } from '../../actions/verseAction'
+import { getAllVerse } from '../../actions/verseAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 const Verses = () => {
@@ -17,7 +17,6 @@ const Verses = () => {
     const ids = useSelector((state) => state.verseReducers.verse.id)
     const comment_count = useSelector((state) => state.verseReducers.verse.comment)
     const own = useSelector((state) => state.verseReducers.verse.owner)
-    console.log(datum)
     return (
         <div>
             {datum !== undefined ?
