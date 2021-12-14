@@ -57,6 +57,9 @@ sql_create_comments_table = """ CREATE TABLE IF NOT EXISTS comments(
     comment_id integer not null,
     comment text not null,
     PRIMARY KEY (username, id, comment_id)
+    FOREIGN KEY (username) REFERENCES users(username)
+    FOREIGN KEY (id) REFERENCES verses(id)
+
     ); """
 # create a database connection
 conn = create_connection(database)

@@ -12,25 +12,42 @@ const Searchbar = () => {
     const [query, setQuery] = useState("")
     const [dispatched, setDispatched] = useState(false)
     const [notFound, setNotFound] = useState(false)
+    const [show, setShow] = useState(false)
+    const [another, setAnother] = useState(false)
     const inputMade = evt => {
 
-        if (query != "") {
-            setDispatched(false)
+        // if (query != "") {
+        //     setDispatched(false)
+        //     dispatch(search(query))
+        //     setQuery("")
+        // }
+        // setNotFound(false)
+        console.log(evt.target.id)
+        if (evt.target.id == "search") {
             dispatch(search(query))
             setQuery("")
+            setAnother(true)
+
         }
-        setNotFound(false)
+        if (evt.target.id == "showresults") {
+            console.log("showresults")
+            setShow(true)
+            setDispatched(false)
+            setAnother(false)
+        }
     }
     function isEmpty(obj) {
         return Object.keys(obj).length === 0;
     }
     const searchResults = useSelector(state => state.searchReducers.user)
 
-    if (dispatched === false && searchResults !== "User Does not exist" && isEmpty(searchResults) === false) {
+    if (dispatched === false && searchResults !== "User Does not exist" && isEmpty(searchResults) === false && another === true) {
         setDispatched(true)
+        setNotFound(false)
     }
     if (notFound === false && searchResults === 'User Does not exist') {
         setNotFound(true)
+        setDispatched(false)
     }
 
     return (
@@ -46,7 +63,6 @@ const Searchbar = () => {
                                         id="form1"
                                         className="form-control"
                                         placeholder="Search User"
-                                        // onClick={() => setDispatched(false)}
                                         onChange={(e) => setQuery(e.target.value)}
                                         value={query}
                                     />
@@ -58,16 +74,22 @@ const Searchbar = () => {
 
                         <span className="col-4">
                             {notFound ? <span className="alert alert-danger" role="alert"> User Does not exist</span> : null}
-                            {dispatched ? <Link to="/searchresults">
-                                <button type="button" className="btn btn-primary">
+                            {dispatched ?
+                                <button type="button" className="btn btn-primary" onClick={inputMade} id="showresults">
                                     Show Results
-                                </button>
-                            </Link> : <button type="button" className="btn btn-primary" onClick={inputMade}>
-                                Search
-                            </button>}
-                        </span>
 
-                    </span> :
+                                </button>
+
+                                : <button type="button" className="btn btn-primary" onClick={inputMade} id="search">
+                                    Search
+                                </button>}
+                        </span>
+                        {show ? <Redirect to="searchresults" /> : null}
+
+                    </span>
+
+
+                    :
                     null
                 }
             </div>

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const signin = (user,password) => {
+export const signin = (user, password) => {
     return (dispatch) => {
-        console.log("signin action",password);
+        console.log("signin action", password);
         const temp = user.split(" ")
         const getRequest = "users?username=" + temp[0] + "&password=" + password
         axios.get(getRequest, user)
@@ -17,6 +17,14 @@ export const signin = (user,password) => {
             })
     }
 }
+export const signout = () => {
+    return (dispatch) => {
+        dispatch({
+            type: "SIGN_OUT"
+        })
+    }
+}
+
 export const signinFailed = () => {
     return {
         type: "INCORRECT_CREDENTIALS",

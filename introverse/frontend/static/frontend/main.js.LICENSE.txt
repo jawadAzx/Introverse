@@ -418,6 +418,8 @@
 
 /*! export signinFailed [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export signout [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export signup [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export text [provided] [no usage info] [missing usage info prevents renaming] */
