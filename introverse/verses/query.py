@@ -4,6 +4,7 @@ def insert_verse(verse,username):
     conn = sqlite3.connect('./db.sqlite3')
     cur = conn.cursor()
     id = 0
+    
     try:
         cur.execute('SELECT id FROM verses;')
         id = cur.fetchall()
